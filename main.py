@@ -35,10 +35,11 @@ async def on_message(message):
         for server in set:
           if not server == str(message.guild.id):
             guild = client.get_guild(int(server))
-            channels = guild.text_channels
-            for channel in channels:
-              if set[str(guild.id)] == str(channel.id):
-                await channel.send(f"**{message.author}**\n{message.content}",files=files)
+            if guild:
+              channels = guild.text_channels
+              for channel in channels:
+                if set[str(guild.id)] == str(channel.id):
+                  await channel.send(f"**{message.author}**\n{message.content}",files=files)
 
 
 client.remove_command('help')
