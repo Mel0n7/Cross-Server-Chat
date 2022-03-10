@@ -1,4 +1,4 @@
-import discord, os, discord.ext, json, requests
+import discord, os, discord.ext, json
 from discord.ext import commands
 from discord.ext.commands import has_permissions
 from dotenv import load_dotenv
