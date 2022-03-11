@@ -40,6 +40,7 @@ async def on_message(message):
               for channel in channels:
                 if set[str(guild.id)] == str(channel.id):
                   await channel.send(f"**{message.author}**\n{message.content}",files=files)
+  await client.process_commands(message)
 
 
 client.remove_command('help')
