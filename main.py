@@ -39,7 +39,7 @@ async def on_message(message):
               channels = guild.text_channels
               for channel in channels:
                 if set[str(guild.id)] == str(channel.id):
-                  await channel.send(f"**{message.author}**\n{message.content}",files=files)
+                  await channel.send(f"**{message.author}** from **{message.guild}**\n{message.content}",files=files)
   await client.process_commands(message)
 
 
@@ -59,7 +59,7 @@ async def setChannel(ctx,channel:discord.TextChannel=None):
   with open("./set.json","w") as setw:
     set[str(ctx.guild.id)] = str(channel.id)
     json.dump(set,setw)
-  await ctx.reply(f"Set channel to #{channel}")
+  await ctx.reply(f"Set channel to {channel.mention}")
   print(f"Set channel to #{channel}")
 
 
