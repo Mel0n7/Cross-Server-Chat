@@ -1,4 +1,5 @@
 import discord, os, discord.ext, json
+from keep_up import keep_up
 from discord.ext import commands
 from discord.ext.commands import has_permissions
 from dotenv import load_dotenv
@@ -62,7 +63,7 @@ async def setChannel(ctx,channel:discord.TextChannel=None):
   await ctx.reply(f"Set channel to {channel.mention}")
   print(f"Set channel to #{channel}")
 
-
+keep_up()
 
 token = os.environ["token"]
 client.run(token)
